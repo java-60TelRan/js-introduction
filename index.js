@@ -1,23 +1,36 @@
-// let a=2;
-// a="abc";
-// console.log(a);
-// const b = 3;
-// b = "lmn"; - const cannot be updated
-//primitive types
-/* 
-1. number like double in Java
-2. string "abc" < "b"
-3. boolean (true, false)
-4. undefined (undefined)
-5. null (null)
-*/
-//1. number
-let a = 100;
-a /= 3;
-console.log("non-normalized result of division 100 on 3",a)
-a = Math.trunc(a);
-console.log("normalized result of division 100 on 3",a);
-a = Math.round(30.6);
-console.log("30.6 rounded - ", a)
-console.log("30.1 after method floor - ", Math.floor(30.1));
-console.log("30.1 after method ceil - ", Math.ceil(30.1));
+//strings
+// let str = "Helloooooooooooooooooooooooo";
+// str = str.toLowerCase();
+// console.log(str);
+// let b = str < "kuku";
+// console.log(b)
+/***************************************************************** */
+// comparing strings: if both are strings the comparing will be according to codes ASCII
+//if one is a number the second will be coverted to a number as well
+//if the second string cannot be coverted to a number the specific value NaN will give always false except operator !=
+
+// let a9 = "20";
+// let str1 = a9;
+// let str2 = "9";
+// let b = str1 < str2;
+// console.log(b)
+/**************************** */
+
+// let str1 = "2a";
+// let str2 = "-5";
+// console.log(3 + "4 * 5" + 2)
+/****************************************** */
+// let str = true
+// if(NaN) {
+//     console.log("" + 5 *2);
+// }
+/**************************************** */
+// console.log(null - "123") //-123
+/******************************************* */
+// console.log(true + true)
+// if(true - true) {
+//     console.log(true);
+// }
+// console.log("true" * false)
+/************************************ */
+console.log("123" + +"true")
