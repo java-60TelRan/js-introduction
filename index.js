@@ -12,5 +12,5 @@ function sumDigits(num) {
 
 function displayAnanas() {
 //TODO
-//display out word "ananas"
+//display out word "ananas" using only letters 'a' and 's'
 }
