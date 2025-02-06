@@ -5,6 +5,8 @@ function sumDigits(num) {
     // sumDigits("123") => 6
     // sumDigits("a123") => NaN
     // sumDigits("123a") => NaN
+    // sumDigits(-123) => 6
+    //sumDigit (123.3333) => 6
 }
 
 
