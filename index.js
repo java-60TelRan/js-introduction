@@ -1,18 +1,10 @@
-// function is an object with operator  () (function call)
-//conversion function to string will return string containing text of the function
-//conversion function to number will return NaN
-const sum = function(a, b) {
-    return a + b;
+function sum (...operands) {
+    let sum = 0;
+    for(let i = 0; i < operands.length; i++) {
+        sum = sum + operands[i];
+    }
+    return sum;
 }
-const subtract = function(a, b) {
-    return a - b;
-}
-const multiply = function(a, b) {
-    return a * b;
-}
-// console.log(sum + "");
-function calculate(fun, a, b){
-    return fun(a, b);
-}
-console.log(calculate( multiply, 5, sum))
-// console.log(10(1, 6))
+//examples of function sum
+console.log(`sum(1,2, "Hello")=${sum(1,2, "Hello")}`);
+//console.log(`sum([1, 2, 3])=${sum([1, 2, 3, 4])}`);
