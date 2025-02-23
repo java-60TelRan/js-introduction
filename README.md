@@ -1,4 +1,4 @@
-# HW#15 definition
+# HW#16 definition
 ## Write two functions:
-### compNumStr (see comments in index.js)
-### orderedList (see comments in index.js)
+### myReduce (see comments in index.js)
+### minMax (see comments in index.js)
