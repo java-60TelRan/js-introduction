@@ -8,5 +8,5 @@ function minMax(arr){
   //TODO
   //arr is an array containing either strings or numbers
   // returns array with two elemnts: first is min value, second is max value
-  //requirement: to use myReduce method described above
+  //requirement: to use myReduce method described above (only one call)
 }
