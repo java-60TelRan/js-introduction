@@ -21,10 +21,44 @@ const arr1 = ["hello", "kuku", "abc"];
 const arr2 = ["abc", "hello", "kuku"];
 const arr3 = [1, 2, 3];
 const arr4 = [3, 2, 1];
-console.log(`[min, max] result for [${arr1}] is [${minMax(arr1)}], expected [abc, kuku]`);
-console.log(`[min, max] result for [${arr2}] is [${minMax(arr2)}], expected [abc, kuku]`);
-console.log(`[min, max] result for [${arr3}] is [${minMax(arr3)}], expected [1, 3]`);
-console.log(`[min, max] result for [${arr4}] is [${minMax(arr4)}], expected [1, 3]`);
-console.log(`sum by using myReduce of [${arr3}] is ${myReduce(arr3, (acc, curr) => acc + curr)}, expected 6`);
-console.log(`multiplicity by using myReduce of [${arr4}] is ${myReduce(arr4, (acc, curr) => acc * curr)}, expected 6`);
-console.log(`multiplicity with initial value 0 by using myReduce of [${arr3}] is ${myReduce(arr3, (acc, curr) => acc * curr, 0)}, expected 0`);
+console.log(test({script:'minMax(["hello", "kuku", "abc"])', expected:["abc", "kuku"]}))
+console.log(test({script:'minMax([1, 2, 3])', expected:[1, 3]}))
+
+function test(testObj) {
+  //testObj structure {script: <string containg script text>, expected: <any type>}
+  //returns resultObj with structure {script: <string containg script text>,
+  //  expectedJSON: <JSON string containing expected result>,
+  //  actualJSON: <JSON string containing actual result>, result: <string containing either 'passed'
+  //  or 'failed'}
+  const expectedJSON = JSON.stringify(testObj.expected);
+  let evalRes;
+  try {
+      evalRes = eval(testObj.script);
+     
+  } catch (error) {
+      evalRes = error;
+  }
+  const actualJSON = JSON.stringify(evalRes);
+  const result = expectedJSON === actualJSON ? 'passed' : 'failed';
+  const testResult = createTestResult(testObj.script, expectedJSON, actualJSON, result);
+  return testResult;
+}
+function createTestResult(script, expectedJSON, actualJSON, result) {
+  return {script, expectedJSON, actualJSON, result};
+}
+function testframework(scripts, expectedResults) {
+  //TODO
+  //input
+  //scripts - array of tested scripts
+  //expectedResults - array of appropriate results
+  //scrpits[i] and expectedResults[i] should be consistent
+  /**************************************************************** */
+  //output
+  const bodyElem = document.querySelector('body');
+  //bodyElem.innerHTML = <orderedList of test results with coloring legend: passed tests by green,
+  //  failed tests by red. After list summary including number of passed tests and number of failed tests with
+  //appropriate coloring (green /red)
+  //presenting list items on the browser
+
+
+}
