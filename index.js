@@ -1,16 +1,9 @@
-
-//
-
-
-//Factory method
-function createPerson(id, name, city, street, app, children) {
-  return {id, name, address:{city, street, app}, children};
-}
-const person = createPerson(123,"Vasya","Lod","Sokolov",12,["Yackob", "Asaf"]);
-const jsonPerson = JSON.stringify(person) ;
-console.log(`person name is ${person.name}`)
-console.log(`person name from JSON is ${jsonPerson.name}`)
-console.log(`person length is  ${person.length}`);
-console.log(`JSON person length is ${jsonPerson.length}`)
-
-
+import { testframework } from "./testframework.js";
+testframework('occurrences function test','const strings = ["b","a", "c", "b", "b", "c"]',
+   ["occurrences(strings)"], [["a=>1", "b=>3", "c=>2"]])
+   testframework('isAnagram testing','const string = "hello"',
+    ['isAnagram(string, "olleh")', 'isAnagram(string, "lehol")',
+      'isAnagram(string, "ollle")', 'isAnagram(string, "hell")',
+      'isAnagram(string, "oelhl")'
+    ], [true, true, false, false, true]
+   )
