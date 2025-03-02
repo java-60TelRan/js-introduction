@@ -19,3 +19,13 @@ body {
     font-size: 1.3rem;
     font-style: italic;
 }
+.arranging {
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2.5vh;
+}
