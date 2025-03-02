@@ -24,7 +24,7 @@ function test(commonScript, testObj) {
 function createTestResult(script, expectedJSON, actualJSON, result) {
   return { script, expectedJSON, actualJSON, result };
 }
-function testframework(testName,commonScript, scripts, expectedResults) {
+export function testframework(testName,commonScript, scripts, expectedResults) {
   //input
   //scripts - array of tested scripts
   //expectedResults - array of appropriate results
