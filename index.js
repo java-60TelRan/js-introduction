@@ -1,25 +1,20 @@
-import { testframework } from "./testframework.js";
-testframework("myReduce and minMax Tests","const numbers=[1,2,3]; const strings=['a','b','c']",["minMax(numbers)", "minMax(strings)",
- " myReduce(numbers, (acc,cur)=>acc + cur)", "myReduce(numbers, (acc, cur)=>acc * cur, 1)",
- "myReduce(numbers, (acc, cur)=>acc * cur, 0)"
-],
-  [[1,3], ['a', 'c'], 6, 6, 0]
-)
-const array = [];
-array[100000] = 10;
-array[0]= 3;
-array[1]=undefined;
+const arr = [1, 2, 3];
+// const arr1 = arr;
+// console.log('before updating arr',`arr1[0]=${arr1[0]}; arr[0] = ${arr[0]}`)
+// arr[0] = 100
+// console.log('after setting 100 in arr[0]',`arr1[0]=${arr1[0]}; arr[0] = ${arr[0]}`)
+// const arr1 = [...arr];
+// console.log('before updating arr',`arr1[0]=${arr1[0]}; arr[0] = ${arr[0]}`)
+// arr[0] = 100
+// console.log('after setting 100 in arr[0]',`arr1[0]=${arr1[0]}; arr[0] = ${arr[0]}`)
+let first = 1;
+let second = 2;
 
-//first variant c-style
-// for(let i = 0; i < array.length; i++) {
-//   console.log(array[i]);
-//  }
-//second variant for-of construction
-// for(const num of array) {
-//   console.log(num);
-// }
-//third variant for-in
-// for(const i in array) {
-//   console.log(i, array[i]);
-// }
+//TODO write one code line (insead of three specified below) after which variable 'first" will contain 2 and second will contain 1
+//regular code from Java
+// const tmp = second;
+// second = first;
+// first = tmp;
+console.log(`second = ${second}`) //should be printed out 1
+console.log(`first = ${first}`) //should be printed out 2
 
