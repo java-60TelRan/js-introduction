@@ -4,7 +4,8 @@ export function myReduce(array, callback, initialValue) {
     //see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
     let acc = initialValue == undefined ? array[0] : initialValue;
     const index = initialValue == undefined ? 1 : 0;
-    for (let i = index; i < array.length; i++) {
+    array = array.splice(index)
+    for (const i in array) {
       acc = callback(acc, array[i], i, array);
     }
     return acc;
