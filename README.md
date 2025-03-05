@@ -1,3 +1,3 @@
-# HW#18 Definition
+# HW#19 part 3 Definition
 ## write method isAnagram in the module anagram.js
-### see the test in index.js for understanding whta should be implemented
+### update code of the function getLetterOccurrences in the module anagram.js according to the TODO comments

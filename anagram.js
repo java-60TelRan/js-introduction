@@ -12,11 +12,12 @@ export function isAnagram(string, anagram) {
   return result;
 }
 function getLetterOccurrences(string) {
-  const res = Array.from(string).reduce((acc, cur) => {
-    acc[cur] = acc[cur] ? acc[cur] + 1 : 1;
-    return acc;
-  }, {});
-  return res;
+  // const res = Array.from(string).reduce((acc, cur) => {
+  //   acc[cur] = acc[cur] ? acc[cur] + 1 : 1;
+  //   return acc;
+  // }, {});
+  // return res;
+  //TODO update code with reduce callback function as one expression that is with no return statement
 }
 function isAnagramOccurrences(letterOccurrences, anagram) {
   const res = Array.from(anagram).every(
