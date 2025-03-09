@@ -5,3 +5,4 @@ export function mergeObjects(firstObj, secondObj, isFirstPref) {
     //otherwise - from the second one
     return isFirstPref ? {...secondObj, ...firstObj} : {...firstObj, ...secondObj}
 }
+
