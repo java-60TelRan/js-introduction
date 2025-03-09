@@ -10,11 +10,8 @@ const arr = [1, 2, 3];
 let first = 1;
 let second = 2;
 
-//TODO write one code line (insead of three specified below) after which variable 'first" will contain 2 and second will contain 1
-//regular code from Java
-// const tmp = second;
-// second = first;
-// first = tmp;
+// write one code line (insead of three specified below) after which variable 'first" will contain 2 and second will contain 1
+[first, second] = [second, first]
 console.log(`second = ${second}`) //should be printed out 1
 console.log(`first = ${first}`) //should be printed out 2
 
