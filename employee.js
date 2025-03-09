@@ -1,26 +1,10 @@
-
-const empl1 = {name: "Vasya", basicSalary: 10000,
-    computeSalary: function() {
-        return this.basicSalary
+export default class Employee {
+    constructor(name, basicSalary, department) {
+        this.name = name;
+        this.basicSalary = basicSalary;
+        this.department = department;
+    }
+    computeSalary() {
+        return this.basicSalary;
     }
 }
-//factory method - method creating object is not used if an object has method/s
-function createEmployee(name, basicSalary) {
-    const res = {name, basicSalary};
-    res.computeSalary = function() {
-        return this.basicSalary
-    }
-}
-function Employee(name, basicSalary) {
-    this.name = name;
-    this.basicSalary = basicSalary;
-
-}
-Employee.prototype.computeSalary = function() {
-    return this.basicSalary
-}
-const empl2 = new Employee("Petya", 10000);
-const empl3 = new Employee("Sara", 12000);
-const empl2Salary = empl2.computeSalary();
-const empl3Salary = empl3.computeSalary();
-let a;
