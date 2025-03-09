@@ -1,4 +1,3 @@
-import {mergeObjects  } from './mergeObjects.js'
 function test(commonScript, testObj) {
   //testObj structure {script: <string containg script text>, expected: <any type>}
   //returns resultObj with structure {script: <string containg script text>,
@@ -39,7 +38,7 @@ export function testframework(testName,commonScript, scripts, expectedResults) {
   const summaryLine = getSummaryLine(summary);
   const commonScriptLines = getCommonScriptLines(commonScript);
   const header = getHeader(testName);
-  bodyElem.innerHTML += `${header}${commonScriptLines}${resultItemsList}${summaryLine}`;
+  bodyElem.innerHTML = `${header}${commonScriptLines}${resultItemsList}${summaryLine}`;
 }
 function getHeader(testName){
   const res = `<header class="logo">${testName}</header>`
