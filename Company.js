@@ -12,16 +12,23 @@ export default class Company {
         delete this.employees[empl.name];
     }
     getDepBudget(department) {
-        //TODO
         //take department name
         //returns total salary of all employees working in the given department
+        const budgetRes = this.getEmployeesDepartment(department)
+        .reduce((acc, cur) => acc + cur.computeSalary(), 0);
+        return budgetRes;
     }
     getEmployeesMaxSalary() {
-        //TODO
-        //returns array of employees with maximal salary
+        const allEmployees = Object.values(this.employees);
+        const maxSalary = Math.max(...allEmployees.map(e => e.computeSalary()));
+        const employeesRes = allEmployees.filter(e => e.computeSalary() == maxSalary);
+        return employeesRes;
+        
     }
     getEmployeesDepartment(department) {
-        //TODO
-        //returns array of employees working in the given department
+        const employeesRes = Object.values(this.employees)
+        .filter(empl =>empl.department === department);
+        return employeesRes;
+
     }
 }
