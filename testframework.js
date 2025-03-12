@@ -1,7 +1,4 @@
-import Employee from "./employee.js";
-import WageEmployee from "./WageEmployee.js";
-import Manager from "./Manager.js";
-import Company from "./Company.js";
+
 function test(commonScript, testObj) {
   //testObj structure {script: <string containg script text>, expected: <any type>}
   //returns resultObj with structure {script: <string containg script text>,
