@@ -1,16 +1,20 @@
 import { testframework } from "./testframework.js";
-// Array.prototype.reduce = function() {
-//     return 0;
-// }
-// delete Array.prototype.reduce
-Array.prototype.sum = function() {
-    const res = this.reduce((acc,cur) => acc + cur);
-    return res;
+function f1() {
+    return "kuku"
 }
-testframework("Tesing new method for all arrays",
-    'const ar1 = [1, 2, 3]; const ar2 = [3, 4, "a"]',
-    ['ar1.sum();', 'ar2.sum();'],
-    [6, "7a"]
-)
+function sum(op1=10, op2) {
+    if(!!this && !!this.x) {
+        op1 += this.x;
+    }
+    return op1 + op2
+}
+Function.prototype.toString = function() {
+
+    return this().toString();
+}
+//console.log(`sum.apply({x:1}, [1, 2])=${sum.apply({x:1}, [1,2])}`)
+//console.log(`sum(1, 2)=${sum(1, 2)}`)
+//console.log(`sum.call({x:1}, 1, 2)=${sum.call({x:1}, 1, 2)}`)
+console.log(sum.bind(undefined, 1, 2).toString())
 
 
