@@ -1,21 +1,19 @@
 import { testframework } from "./testframework.js";
-class Deferred {
-    constructor () {
-      this.functions = [];
-    }
-    then(fun) {
-      this.functions.push(fun);
-    }
-    resolve(value) {
-      this.functions.forEach(fun => value = fun(value))
-    }
+Function.prototype.myBind = function(thisArg, ...argsBind) {
+  return (...callArgs) => this.apply(thisArg, [...argsBind, ...callArgs]);
 }
-const d = new Deferred()
-d.then(function(res){ console.log("1 ", res); return "a"; });
-d.then(function(res){ console.log("2 ", res); return "b"; });
-d.then(function(res){ console.log("3 ", res); return "c"; });
-d.resolve('hello');
+const commonScript = `function sum(op1, op2) {
+  let res = 0;
+  if(this) {
+    res = Object.values(this).reduce((acc, cur) => acc +cur)
+  }
+  res += op1 + op2;
+  return res;
+}`
 
 
-
-
+testframework("My bind testing", commonScript, 
+  ['sum.myBind(undefined, 1, 2)()', 'sum.myBind({x:1, y:2},1, 2)()',
+    'sum.myBind({x:1, y:2},1)(2)', 'sum.myBind({x:1, y:2})(1, 2)' ],
+    [3, 6, 6, 6]
+)
