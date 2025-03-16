@@ -2,18 +2,24 @@ import { testframework } from "./testframework.js";
 Function.prototype.myBind = function(thisArg, ...argsBind) {
   return (...callArgs) => this.apply(thisArg, [...argsBind, ...callArgs]);
 }
-const commonScript = `function sum(op1, op2) {
-  let res = 0;
-  if(this) {
-    res = Object.values(this).reduce((acc, cur) => acc +cur)
+class Deferred {
+  constructor() {
+    this.functions = [];
   }
-  res += op1 + op2;
-  return res;
-}`
+  then(fun) {
+    this.functions.push(fun)
+  }
+  funCall(fun) {
+    this.value = fun(this.value);
+  }
+  resolve(value) {
+    this.value = value;
+    this.functions.forEach(this.funCall.myBind(this));
+  }
+}
+const d = new Deferred()
+d.then(function(res){ console.log("1 ", res); return "a"; });
+d.then(function(res){ console.log("2 ", res); return "b"; });
+d.then(function(res){ console.log("3 ", res); return "c"; });
+d.resolve('hello');
 
-
-testframework("My bind testing", commonScript, 
-  ['sum.myBind(undefined, 1, 2)()', 'sum.myBind({x:1, y:2},1, 2)()',
-    'sum.myBind({x:1, y:2},1)(2)', 'sum.myBind({x:1, y:2})(1, 2)' ],
-    [3, 6, 6, 6]
-)
