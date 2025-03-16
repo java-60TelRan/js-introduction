@@ -9,5 +9,3 @@ d.resolve('hello');<br><br>
 1  hello<br>
 2  a<br>
 3  b<br>
-## Write method myBind  with the same behavior as the standard "bind" method
-### You may use any standard methods except "bind"
