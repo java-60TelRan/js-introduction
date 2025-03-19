@@ -36,5 +36,5 @@ function funStackExample(username) {
   .catch(e => console.log(e));
 }
 funStackExample('Vasya');
-console.log("waiting for the data coming from the server");
 funStackExample('Hana');
+console.log("waiting for the data coming from the server");
