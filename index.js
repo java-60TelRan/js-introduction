@@ -29,12 +29,17 @@ function getUserData(username) {
   return getPromise(1000, users[username])
 
   }
-function funStackExample(username) {
-  getUserPassword(0.8).then(password => login(password))
-  .then(() => getUserData(username))
-  .then(userData => console.log('Data coming from the server are ', userData))
-  .catch(e => console.log(e));
+async function funStackExample(username) {
+ try {
+  const password = await getUserPassword(0.5);
+  await login(password);
+  const userData = await getUserData(username);
+  console.log(userData)
+ } catch (error) {
+  console.log(error, username)
+ }
 }
 funStackExample('Vasya');
-funStackExample('Hana');
-console.log("waiting for the data coming from the server");
+funStackExample('Petya');
+;
+console.log("waiting for the data coming from the server...");
