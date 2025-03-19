@@ -39,7 +39,8 @@ async function funStackExample(username) {
   console.log(error, username)
  }
 }
-funStackExample('Vasya');
-funStackExample('Petya');
-;
+//Print out the message "Data processed" only after finishing both functions"
+const promise1 = funStackExample('Vasya');
+const promise2 = funStackExample('Petya');
 console.log("waiting for the data coming from the server...");
+Promise.all([promise1, promise2]).then(() => console.log("data processed"))
