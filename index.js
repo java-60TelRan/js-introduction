@@ -1,4 +1,11 @@
-'use strict'
-a = 10;
+function fun1() {
+  var a = 40;
+ if (a == 40) {
+    var a = 10;
+    setTimeout(() => console.log('a', a), 0, a)
 
-console.log('a', window.a)
+ }
+ a = 30;
+
+}
+fun1()
