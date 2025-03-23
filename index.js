@@ -1,23 +1,10 @@
-let iLet = 10;
-var iVar = 20;
-var iVar = 30;
-
-console.log('iVar from global Window object', window.iVar);
-console.log('iLet from global Window object', window.iLet)
-
-function funVar() {
-  var x = 10;
-  for(var x = 0; x < 5; x++) {
-
-  }
-console.log('var',x)
+fun(10);
+function fun(num) {
+  console.log(num);
 }
-funVar()
-function funLet() {
-  let x = 10;
-  for(let x = 0; x < 5; x++) {
-
-  }
-console.log('let',x)
-}
-funLet()
+b = 10;
+var b;
+console.log('b', b); 
+a = 10;
+let a;
+console.log('a', a); //reference error
