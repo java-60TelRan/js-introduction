@@ -1,11 +1,10 @@
-function fun1() {
-  var a = 40;
- if (a == 40) {
-    var a = 10;
-    setTimeout(() => console.log('a', a), 0, a)
-
- }
- a = 30;
-
+const a = {};
+const b = { key: 'b' };
+const c = { key: 'c' };
+b.toString = function() {
+   return "kuku"
 }
-fun1()
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
