@@ -1,10 +1,14 @@
-const a = {};
-const b = { key: 'b' };
-const c = { key: 'c' };
-b.toString = function() {
-   return "kuku"
-}
-a[b] = 123;
-a[c] = 456;
+const myPromise = () => Promise.resolve('I have resolved!');
 
-console.log(a[b]);
+function firstFunction() {
+  myPromise().then(res => console.log(res));
+  console.log('second');
+}
+
+async function secondFunction() {
+  console.log(await myPromise());
+  console.log('second');
+}
+
+firstFunction();
+secondFunction();
